@@ -19,14 +19,14 @@ public class App implements Callable<Integer> {
     String filepath1;
 
     @Parameters(description = "path to second file.")
-    private String filepath2;
+    String filepath2;
 
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
     String format = "stylish";
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("Hello, World!");
+        Differ.generate(filepath1, filepath2);
         return 0;
     }
 }
