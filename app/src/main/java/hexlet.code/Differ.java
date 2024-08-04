@@ -1,18 +1,13 @@
 package hexlet.code;
 
+import java.io.IOException;
 import java.util.Map;
-
-import lombok.Setter;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Differ {
 
     private Boolean follow;
@@ -62,7 +57,7 @@ public class Differ {
         this.verbose = verbose;
     }
 
-    public static Map<String, Object> generate(String filepath1, String filepath2) throws Exception {
+    public static Map<String, Object> generate(String filepath1, String filepath2) throws IOException {
 
         Path path1 = Paths.get("/home/artur/java-project-71/app/src/main/java/hexlet.code/file1.json").toAbsolutePath().normalize();
         Path path2 = Paths.get("/home/artur/java-project-71/app/src/main/java/hexlet.code/file2.json").toAbsolutePath().normalize();
