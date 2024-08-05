@@ -2,10 +2,14 @@ package hexlet.code;
 
 import java.io.IOException;
 import java.util.Map;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Differ {
@@ -57,30 +61,50 @@ public class Differ {
         this.verbose = verbose;
     }
 
-    public static Map<String, Object> generate(String filepath1, String filepath2) throws IOException {
+    public static Map<String, Object> makeMapFromPath(String filepath) throws IOException {
 
-        Path path1 = Paths.get("/home/artur/java-project-71/app/src/main/java/hexlet.code/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("/home/artur/java-project-71/app/src/main/java/hexlet.code/file2.json").toAbsolutePath().normalize();
+        Path path = Paths.get(filepath).toAbsolutePath().normalize();
 
-        String stringPath1 = Files.readString(path1);
-        String stringPath2 = Files.readString(path2);
+        String stringPath = Files.readString(path);
 
-        if (!Files.exists(path1)) {
-            throw new Exception("File '" + path1 + "' does not exist");
+        Map<String, Object> result = (Map<String, Object>) new ObjectMapper().readValue(stringPath, new TypeReference<>() {
+        });
+
+        return result;
+    }
+
+    public static String generate(String filepath1, String filepath2) throws IOException {
+
+        StringBuilder sb = new StringBuilder();
+
+        Map<String, Object> map1 = makeMapFromPath(filepath1);
+        Map<String, Object> map2 = makeMapFromPath(filepath2);
+
+        Set<String> keySet = new TreeSet<>(map1.keySet());
+        keySet.addAll(map2.keySet());
+        for (String key : keySet) {
+            if (map1.containsKey(key) && !map2.containsKey(key)) {
+                sb.append("-" + key + ":" + map1.get(key) + "\n");
+            }
+
+            if (!map1.containsKey(key) && map2.containsKey(key)) {
+                sb.append("+" + key + ":" + map2.get(key) + "\n");
+            }
+
+            if (map1.containsKey(key) && map2.containsKey(key)) {
+                if(map1.get(key).equals(map2.get(key))) {
+                    sb.append(" " + key + ":" + map1.get(key) +"\n");
+                }
+                if(!map1.get(key).equals(map2.get(key))) {
+                    sb.append("-" + key + ":" + map1.get(key) + "\n");
+                    sb.append("+" + key + ":" + map2.get(key) + "\n");
+                }
+            }
         }
-
-        if (!Files.exists(path2)) {
-            throw new Exception("File '" + path2 + "' does not exist");
-        }
-
-        Map<String, Object> result1 =
-                (Map<String, Object>) new ObjectMapper().readValue(stringPath1, Differ.class);
-
-        Map<String, Object> result2 =
-                (Map<String, Object>) new ObjectMapper().readValue(stringPath2, Differ.class);
-
-        return result1;
-
+        String showDifference = sb.toString();
+        return showDifference;
     }
 
 }
+
+
