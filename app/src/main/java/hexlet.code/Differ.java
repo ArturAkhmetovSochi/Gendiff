@@ -91,8 +91,8 @@ public class Differ {
             }
 
             if (map1.containsKey(key) && map2.containsKey(key)) {
-                if(map1.get(key).equals(map2.get(key))) {
-                    sb.append(" " + key + ":" + map1.get(key) +"\n");
+                if (map1.get(key).equals(map2.get(key))) {
+                    sb.append(" " + key + ":" + map1.get(key) + "\n");
                 }
                 if (!map1.get(key).equals(map2.get(key))) {
                     sb.append("-" + key + ":" + map1.get(key) + "\n");
