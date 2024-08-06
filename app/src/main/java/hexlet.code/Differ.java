@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
@@ -67,7 +68,8 @@ public class Differ {
 
         String stringPath = Files.readString(path);
 
-        Map<String, Object> result = (Map<String, Object>) new ObjectMapper().readValue(stringPath, new TypeReference<>() {
+
+        Map<String, Object> result = new ObjectMapper().readValue(stringPath, new TypeReference<>() {
         });
 
         return result;
