@@ -19,5 +19,7 @@ jobs:
       with:
         gradle-version: 8.5 
     - run: make build
+    - run: ./gradlew checkstyleMain
+    - run: ./gradlew test
 
  
