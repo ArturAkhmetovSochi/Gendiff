@@ -1,9 +1,7 @@
 package hexlet.code;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
@@ -96,7 +94,7 @@ public class Differ {
                 if(map1.get(key).equals(map2.get(key))) {
                     sb.append(" " + key + ":" + map1.get(key) +"\n");
                 }
-                if(!map1.get(key).equals(map2.get(key))) {
+                if (!map1.get(key).equals(map2.get(key))) {
                     sb.append("-" + key + ":" + map1.get(key) + "\n");
                     sb.append("+" + key + ":" + map2.get(key) + "\n");
                 }
