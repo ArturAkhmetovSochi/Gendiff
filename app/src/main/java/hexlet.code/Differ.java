@@ -65,7 +65,6 @@ public class Differ {
     public static Map<String, Object> makeMapFromPath(String filepath) throws IOException {
 
         Path path = Paths.get(filepath).toAbsolutePath().normalize();
-
         String stringPath = Files.readString(path);
 
 

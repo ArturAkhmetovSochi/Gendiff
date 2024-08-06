@@ -1,8 +1,8 @@
 run-dist:
-	@./build/install/app/bin/app
+	@/home/artur/java-project-71/app/build/install/app/bin/app
 
 help:
-	@./build/install/app/bin/app -h
+	@/home/artur/java-project-71/app/build/install/app/bin/app -h
 
 clean:
 	@./gradlew clean
