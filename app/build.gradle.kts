@@ -1,6 +1,5 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
-import org.gradle.kotlin.dsl.support.kotlinCompilerOptions
 
 plugins {
     checkstyle
@@ -32,8 +31,6 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.22.0")
     }
 
-
-
 tasks.test {
     useJUnitPlatform()
     // https://technology.lastminute.com/junit5-kotlin-and-gradle-dsl/
@@ -46,8 +43,8 @@ tasks.test {
     }
 }
 
-fun compileJava(function: () -> Unit) {
+tasks.jacocoTestReport { reports { xml.required.set(true) } }
 
-}
+
 
 
