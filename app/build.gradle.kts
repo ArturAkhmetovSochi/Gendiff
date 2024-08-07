@@ -41,6 +41,7 @@ tasks.test {
         // showCauses = true
         showStandardStreams = true
     }
+}
 
 
 
