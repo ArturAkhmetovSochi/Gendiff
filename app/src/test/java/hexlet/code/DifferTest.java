@@ -12,7 +12,7 @@ class DifferTest {
     @Test
     public void testMakeMapFromPath() throws IOException {
 
-        String filepath = "/home/artur/java-project-71/app/src/test/resources/testFile1.json";
+        String filepath = "testFile1.json";
         Map<String, Object> map1 = Map.of("host", "hexlet.io", "timeout", 25,
                 "proxy", "777.777.777", "follow", true);
         Map<String, Object> map2 = Differ.makeMapFromPath(filepath);
@@ -23,8 +23,8 @@ class DifferTest {
     @Test
     public void testGenerate() throws IOException {
 
-        String str1 = Differ.generate("/home/artur/java-project-71/app/src/test/resources/testFile1.json",
-            "/home/artur/java-project-71/app/src/test/resources/testFile2.json");
+        String str1 = Differ.generate("testFile1.json",
+                "testFile2.json");
         String str2 = ("-follow:true" + "\n" + " host:hexlet.io" + "\n" + "-proxy:777.777.777"
             + "\n" + "-timeout:25" + "\n" + "+timeout:55" + "\n" + "+verbose:false" + "\n");
 
