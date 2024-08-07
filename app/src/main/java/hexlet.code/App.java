@@ -15,12 +15,10 @@ public class App implements Callable<Integer> {
         System.exit(exitCode);
     }
 
-    @Parameters(description = "path to first file", defaultValue =
-            "/home/artur/java-project-71/app/src/main/java/hexlet.code/file1.json")
+    @Parameters(description = "path to first file")
     String filepath1;
 
-    @Parameters(description = "path to second file.", defaultValue =
-            "/home/artur/java-project-71/app/src/main/java/hexlet.code/file2.json")
+    @Parameters(description = "path to second file.")
     String filepath2;
 
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
