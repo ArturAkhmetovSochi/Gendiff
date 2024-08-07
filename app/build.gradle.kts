@@ -41,35 +41,6 @@ tasks.test {
         // showCauses = true
         showStandardStreams = true
     }
-    jacoco {
-        toolVersion = "0.8.7"
-    }
-
-    test {
-        finalizedBy jacocoTestReport
-    }
-
-    jacocoTestReport {
-        reports {
-            xml.enabled true
-            html.enabled true
-            csv.enabled false
-        }
-    }
-
-    jacocoTestCoverageVerification {
-        violationRules {
-            rule {
-                limit {
-                    // минимальное покрытие тестами в процентах
-                    minimum = 0.50
-                }
-            }
-        }
-    }
-
-    check.dependsOn jacocoTestCoverageVerification
-}
 
 
 
