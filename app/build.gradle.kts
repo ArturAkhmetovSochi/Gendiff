@@ -31,16 +31,6 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.22.0")
     }
 
-
-
-tasks.test {
-    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
-}
-
-tasks.jacocoTestReport {
-    dependsOn(tasks.test) // tests are required to run before generating the report
-}
-
 tasks.test {
     useJUnitPlatform()
     // https://technology.lastminute.com/junit5-kotlin-and-gradle-dsl/
@@ -52,9 +42,6 @@ tasks.test {
         showStandardStreams = true
     }
 }
-
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
-
 
 
 
