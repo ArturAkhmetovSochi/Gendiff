@@ -32,6 +32,8 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.22.0")
     }
 
+
+
 tasks.test {
     useJUnitPlatform()
     // https://technology.lastminute.com/junit5-kotlin-and-gradle-dsl/
@@ -44,8 +46,8 @@ tasks.test {
     }
 }
 
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
-
 fun compileJava(function: () -> Unit) {
 
 }
+
+
