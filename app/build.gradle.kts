@@ -43,5 +43,27 @@ tasks.test {
     }
 }
 
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+    reportsDirectory = layout.buildDirectory.dir("customJacocoReportDir")
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+    }
+}
+
+
+
+
+
+
 
 
