@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
@@ -21,7 +21,7 @@ jobs:
       - uses: paambaati/codeclimate-action@v3.2.0
         env:
             CC_TEST_REPORTER_ID: 1276139da08ffe13e33c8d21d12dd393fc1d006abc351ccf1d6b8dbd4003ca6a
-            JACOCO_SOURCE_PATH: ${{github.workspace}}app/src/main/java
+            JACOCO_SOURCE_PATH: app/src/main/java
         with:
              coverageCommand: make  -C app report
              debug: true
