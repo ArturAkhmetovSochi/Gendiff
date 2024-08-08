@@ -33,17 +33,6 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-    // https://technology.lastminute.com/junit5-kotlin-and-gradle-dsl/
-    testLogging {
-        exceptionFormat = TestExceptionFormat.FULL
-        events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
-        // showStackTraces = true
-        // showCauses = true
-        showStandardStreams = true
-    }
-}
-
-tasks.test {
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
 }
 
