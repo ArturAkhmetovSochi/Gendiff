@@ -62,7 +62,7 @@ public class Differ {
 
     public static Map<String, Object> makeMapFromPath(String filepath) throws IOException {
 
-        Path path = Paths.get("src/main/java/hexletcode/" + filepath).toAbsolutePath().normalize();
+        Path path = Paths.get("src/main/java/hexlet.code/" + filepath).toAbsolutePath().normalize();
         String stringPath = Files.readString(path);
 
 
