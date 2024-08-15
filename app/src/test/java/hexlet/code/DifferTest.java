@@ -15,7 +15,7 @@ class DifferTest {
         String filepath = "testFile1.json";
         Map<String, Object> map1 = Map.of("host", "hexlet.io", "timeout", 25,
                 "proxy", "777.777.777", "follow", true);
-        Map<String, Object> map2 = Differ.makeMapFromPath(filepath);
+        Map<String, Object> map2 = Parser.getMapFromFile(filepath);
 
         Assertions.assertTrue(map1.equals(map2));
     }

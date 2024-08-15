@@ -2,14 +2,8 @@ package hexlet.code;
 
 import java.io.IOException;
 import java.util.Map;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
-
 
 public class Differ {
 
@@ -60,24 +54,12 @@ public class Differ {
         this.verbose = verbose;
     }
 
-    public static Map<String, Object> makeMapFromPath(String filepath) throws IOException {
-
-        Path path = Paths.get("src/main/java/hexlet/code/" + filepath).toAbsolutePath().normalize();
-        String stringPath = Files.readString(path);
-
-
-        Map<String, Object> result = new ObjectMapper().readValue(stringPath, new TypeReference<>() {
-        });
-
-        return result;
-    }
-
     public static String generate(String filepath1, String filepath2) throws IOException {
 
         StringBuilder sb = new StringBuilder();
 
-        Map<String, Object> map1 = makeMapFromPath(filepath1);
-        Map<String, Object> map2 = makeMapFromPath(filepath2);
+        Map<String, Object> map1 = Parser.getMapFromFile(filepath1);
+        Map<String, Object> map2 = Parser.getMapFromFile(filepath2);
 
         Set<String> keySet = new TreeSet<>(map1.keySet());
         keySet.addAll(map2.keySet());
