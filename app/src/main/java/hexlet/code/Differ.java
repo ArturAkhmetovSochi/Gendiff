@@ -1,9 +1,8 @@
 package hexlet.code;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class Differ {
 
@@ -56,36 +55,17 @@ public class Differ {
 
     public static String generate(String filepath1, String filepath2) throws IOException {
 
-        StringBuilder sb = new StringBuilder();
+        String format = "stylish";
 
         Map<String, Object> map1 = Parser.getMapFromFile(filepath1);
         Map<String, Object> map2 = Parser.getMapFromFile(filepath2);
 
-        Set<String> keySet = new TreeSet<>(map1.keySet());
-        keySet.addAll(map2.keySet());
-        for (String key : keySet) {
-            if (map1.containsKey(key) && !map2.containsKey(key)) {
-                sb.append("-" + key + ":" + map1.get(key) + "\n");
-            }
+        List<Map<String, Object>> differenceMap = Difference.getDifference(map1, map2);
 
-            if (!map1.containsKey(key) && map2.containsKey(key)) {
-                sb.append("+" + key + ":" + map2.get(key) + "\n");
-            }
-
-            if (map1.containsKey(key) && map2.containsKey(key)) {
-                if (map1.get(key).equals(map2.get(key))) {
-                    sb.append(" " + key + ":" + map1.get(key) + "\n");
-                }
-                if (!map1.get(key).equals(map2.get(key))) {
-                    sb.append("-" + key + ":" + map1.get(key) + "\n");
-                    sb.append("+" + key + ":" + map2.get(key) + "\n");
-                }
-            }
-        }
-        String showDifference = sb.toString();
-        return showDifference;
+        return Format.format(differenceMap, format);
     }
 
 }
+
 
 

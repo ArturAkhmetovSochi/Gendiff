@@ -19,7 +19,7 @@ public class Parser {
             result = new ObjectMapper();
 
         }
-        if (filepath.endsWith("yml")) {
+        if (filepath.endsWith("yml") || filepath.endsWith("yaml")) {
             result = new YAMLMapper();
 
         }

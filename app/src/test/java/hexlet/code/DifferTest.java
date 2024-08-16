@@ -30,4 +30,5 @@ class DifferTest {
 
         assertEquals(str1, str2);
     }
+
 }
