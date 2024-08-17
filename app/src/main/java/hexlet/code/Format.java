@@ -16,6 +16,9 @@ public class Format {
             case "plain":
                 str = Plain.plainFormate(map);
                 break;
+            case "json":
+                str = Json.jsonFormate(map);
+                break;
             default:
         }
 
