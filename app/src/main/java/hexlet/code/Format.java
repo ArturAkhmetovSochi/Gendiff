@@ -12,6 +12,10 @@ public class Format {
         switch (format.toLowerCase()) {
             case "stylish":
                 str = Stylish.stylishFormate(map);
+                break;
+            case "plain":
+                str = Plain.plainFormate(map);
+                break;
             default:
         }
 

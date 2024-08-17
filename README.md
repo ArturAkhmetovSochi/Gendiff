@@ -11,3 +11,6 @@
 
 ### Stylish format 
 [![asciicast](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je.svg)](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je)
+
+### Plain format
+[![asciicast](https://asciinema.org/a/0tmOBc3K4NwnClBu0rD8eWoOI.svg)](https://asciinema.org/a/0tmOBc3K4NwnClBu0rD8eWoOI)
