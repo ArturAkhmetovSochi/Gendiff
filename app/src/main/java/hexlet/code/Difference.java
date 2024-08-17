@@ -1,12 +1,18 @@
 package hexlet.code;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.List;
+import java.util.TreeSet;
+import java.util.Objects;
 
 public class Difference {
     public static List<Map<String, Object>> getDifference(Map<String, Object> map1, Map<String,
             Object> map2) throws IOException {
-    Set<String> keySet = new TreeSet<>(map1.keySet());
+        Set<String> keySet = new TreeSet<>(map1.keySet());
         keySet.addAll(map2.keySet());
 
         List<Map<String, Object>> result = new ArrayList<>();
@@ -19,7 +25,7 @@ public class Difference {
         return result;
     }
 
-    public static Map<String,Object> makeDifferenceMap(Map<String, Object> map1, Map<String,
+    public static Map<String, Object> makeDifferenceMap(Map<String, Object> map1, Map<String,
             Object> map2, String key) throws IOException {
 
         Object value1 = map1.get(key);
@@ -34,13 +40,13 @@ public class Difference {
         } else if (!map1.containsKey(key)) {
             map.put("type", "added");
             map.put("value", value2);
-        } else if (map1.get(key) == map2.get(key))  {
-            map.put("type", "unchanged");
-            map.put("value", value1);
-        } else {
+        } else if (!Objects.equals(value1, value2))  {
             map.put("type", "changed");
             map.put("value1", value1);
             map.put("value2", value2);
+        } else {
+            map.put("type", "unchanged");
+            map.put("value", value1);
         }
 
         return map;

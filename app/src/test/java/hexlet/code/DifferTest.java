@@ -25,8 +25,8 @@ class DifferTest {
 
         String str1 = Differ.generate("testFile1.json",
                 "testFile2.json");
-        String str2 = ("-follow:true" + "\n" + " host:hexlet.io" + "\n" + "-proxy:777.777.777"
-            + "\n" + "-timeout:25" + "\n" + "+timeout:55" + "\n" + "+verbose:false" + "\n");
+        String str2 = ("{" + "\n" + "  -follow:true" + "\n" + "   host:hexlet.io" + "\n" + "  -proxy:777.777.777"
+                + "\n" + "  -timeout:25" + "\n" + "  +timeout:55" + "\n" + "  +verbose:false" + "\n" + "}");
 
         assertEquals(str1, str2);
     }

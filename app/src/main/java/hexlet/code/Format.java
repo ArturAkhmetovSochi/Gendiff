@@ -12,7 +12,7 @@ public class Format {
         switch (format.toLowerCase()) {
             case "stylish":
                 str = Stylish.stylishFormate(map);
-
+            default:
         }
 
         return str;

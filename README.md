@@ -8,3 +8,6 @@
 
 ### YAML
 [![asciicast](https://asciinema.org/a/985sfcg2UBcSqJjE92YuxSnDZ.svg)](https://asciinema.org/a/985sfcg2UBcSqJjE92YuxSnDZ)
+
+### Stylish format 
+[![asciicast](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je.svg)](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je)
