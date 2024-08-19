@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.Formatter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

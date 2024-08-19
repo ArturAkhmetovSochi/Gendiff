@@ -1,5 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.Formatter.Json;
+import hexlet.code.Formatter.Plain;
+import hexlet.code.Formatter.Stylish;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +24,7 @@ public class Format {
                 str = Json.jsonFormate(map);
                 break;
             default:
+                throw new IOException("no such format");
         }
 
         return str;

@@ -1,0 +1,21 @@
+---
+setting1: Something
+setting3: true
+key1: value1
+numbers1:
+  - 1
+  - 2
+  - 3
+  - 4
+numbers2:
+  - 2
+  - 3
+  - 4
+  - 5
+id: 45
+default:
+checked: false
+numbers3:
+  - a
+  - b
+  - c
