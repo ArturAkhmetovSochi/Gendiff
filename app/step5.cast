@@ -1,9 +1,0 @@
-{"version": 2, "width": 127, "height": 24, "timestamp": 1722867044, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
-[0.020951, "o", "\u001b[?2004h\u001b]0;artur@artur-Aspire-A515-57: ~/java-project-71/app\u0007\u001b[01;32martur@artur-Aspire-A515-57\u001b[00m:\u001b[01;34m~/java-project-71/app\u001b[00m$ "]
-[0.996181, "o", "./build/install/app/bin/app filepath1.json filepath2.json"]
-[1.192806, "o", "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[22P$ whereis update-java-alternatives "]
-[1.921901, "o", "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b./build/install/app/bin/app filepath1.json filepath2.json"]
-[3.057748, "o", "\r\n\u001b[?2004l\r"]
-[3.269272, "o", "-follow:false\r\n host:hexlet.io\r\n-proxy:123.234.53.22\r\n-timeout:50\r\n+timeout:20\r\n+verbose:true\r\n\r\n"]
-[3.310949, "o", "\u001b[?2004h\u001b]0;artur@artur-Aspire-A515-57: ~/java-project-71/app\u0007\u001b[01;32martur@artur-Aspire-A515-57\u001b[00m:\u001b[01;34m~/java-project-71/app\u001b[00m$ "]
-[5.518336, "o", "\u001b[?2004l\r\r\nexit\r\n"]
