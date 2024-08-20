@@ -11,6 +11,8 @@ import java.util.Map;
 public class Format {
     public static String format(List<Map<String, Object>> map, String format) throws IOException {
 
+        String str = " ";
+
         switch (format.toLowerCase()) {
             case "stylish":
                 str = Stylish.stylishFormate(map);
