@@ -6,9 +6,6 @@
 
 ### Программа называется "Вычислитель отличий". Принимает на вход два файла типа "JSON" или "YAML". Сравнивает их между собой и выдает различия в трех форматах("stylish" or "default", "plain", "json").
 
-### Help
-![Снимок экрана от 2024-08-19 13-12-49](https://github.com/user-attachments/assets/6c69d4f1-0ca4-4489-a52b-fad241861d4f)
-
 ### Stylish or default
 [![asciicast](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je.svg)](https://asciinema.org/a/HTwzKZVG32bArPhBUJXqG51Je)
 
