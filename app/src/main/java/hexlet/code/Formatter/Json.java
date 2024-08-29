@@ -9,6 +9,6 @@ public class Json {
     public static String jsonFormate(List<Map<String, Object>> mapes) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(mapes);
+        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(mapes);
     }
 }

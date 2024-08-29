@@ -1,0 +1,11 @@
+Property 'checked' was removed
+Property 'default' was updated. From null to [complex value]
+Property 'id' was updated. From 45 to null
+Property 'key1' was removed
+Property 'key2' was added with value: 'value2'
+Property 'numbers2' was updated. From [complex value] to [complex value]
+Property 'numbers3' was removed
+Property 'obj1' was added with value: [complex value]
+Property 'setting1' was removed
+Property 'setting2' was added with value: 777
+Property 'setting3' was updated. From true to 'none'

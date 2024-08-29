@@ -4,35 +4,26 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
 
 public class Parser {
 
-    public static ObjectMapper getMapperFromFile(String filepath) throws IOException {
+    public static Map<String, Object> parse(String filepath, String format) throws IOException {
 
-        ObjectMapper result = null;
-
-        if (filepath.endsWith("json")) {
-            result = new ObjectMapper();
-
-        }
-        if (filepath.endsWith("yml") || filepath.endsWith("yaml")) {
-            result = new YAMLMapper();
-
-        }
-
-        return result;
+        return switch (format) {
+            case "yml" -> getYaml(filepath);
+            case "json" -> getJson(filepath);
+            default -> throw new IOException("Inccorect format type");
+        };
     }
 
-    public static Map<String, Object> getMapFromFile(String filepath) throws IOException {
+    public static Map<String, Object> getYaml(String filepath) throws IOException {
+        ObjectMapper mapper = new YAMLMapper();
+        return mapper.readValue(filepath, new TypeReference<>() { });
+    }
 
-        Path path = Paths.get(filepath).toAbsolutePath().normalize();
-        String stringPath = Files.readString(path);
-
-        ObjectMapper mapper = getMapperFromFile(filepath);
-        return mapper.readValue(stringPath, new TypeReference<>() { });
+    public static Map<String, Object> getJson(String filepath) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(filepath, new TypeReference<>() { });
     }
 }

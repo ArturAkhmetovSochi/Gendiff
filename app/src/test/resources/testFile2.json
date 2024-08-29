@@ -1,0 +1,13 @@
+{
+  "setting2": 777,
+  "setting3": "none",
+  "key2": "value2",
+  "numbers1": [1, 2, 3, 4],
+  "numbers2": [22, 33, 44, 55],
+  "id": null,
+  "default": ["value1", "value2"],
+  "obj1": {
+    "nestedKey": "value",
+    "isNested": true
+  }
+}
