@@ -29,7 +29,7 @@ public class Parser {
 
     public static Map<String, Object> getMapFromFile(String filepath) throws IOException {
 
-        Path path = Paths.get("src/main/resources/" + filepath).toAbsolutePath().normalize();
+        Path path = Paths.get(filepath).toAbsolutePath().normalize();
         String stringPath = Files.readString(path);
 
         ObjectMapper mapper = getMapperFromFile(filepath);
