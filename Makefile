@@ -20,6 +20,6 @@ clean:
 	make -C app clean
 
 install:
-	make -C app clean installDist
+	make -C app clean install
 
 .PHONY: build
