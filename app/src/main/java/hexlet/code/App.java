@@ -16,13 +16,13 @@ public class App implements Callable<Integer> {
     }
 
     @Parameters(description = "path to first file")
-    String filepath1;
+    private String filepath1;
 
     @Parameters(description = "path to second file.")
-    String filepath2;
+    private String filepath2;
 
     @Option(names = {"-f", "--format"}, defaultValue = "stylish", description = "output format [default: stylish]")
-    String format;
+    private String format;
 
     @Override
     public Integer call() throws Exception {
