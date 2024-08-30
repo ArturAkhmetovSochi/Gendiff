@@ -7,7 +7,7 @@ clean:
 	@./gradlew clean
 
 install:
-	@./gradlew clean install
+	@./gradlew clean installDist
 
 lint:
 	@./gradlew checkstyleMain checkstyleTest
