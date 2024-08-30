@@ -9,10 +9,10 @@ public class Stylish {
 
     public static String stylishFormate(List<Map<String, Object>> mapes) throws IOException {
 
-        String space = " ".repeat(4);
+        String space = " ".repeat(2);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("   {\n");
+        sb.append(" {\n");
 
         for (Map<String, Object> map : mapes) {
             if (map.get("type").equals("added")) {
@@ -27,7 +27,7 @@ public class Stylish {
             }
         }
 
-        sb.append("   }");
+        sb.append(" }");
         String showDifference = sb.toString();
 
         return showDifference;
