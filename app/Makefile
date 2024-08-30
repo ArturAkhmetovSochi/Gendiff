@@ -6,7 +6,7 @@ help:
 clean:
 	@./gradlew clean
 
-installDist:
+install:
 	@./gradlew clean installDist
 
 lint:
