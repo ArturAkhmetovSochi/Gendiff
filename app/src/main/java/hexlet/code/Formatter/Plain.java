@@ -33,7 +33,7 @@ public class Plain {
                         + valueCheck(map.get("value1")) + " to " + valueCheck(map.get("value2")) + "\n");
             }
         }
-
+        sb.deleteCharAt(sb.length() - 1);
         String showDifference = sb.toString();
 
         return showDifference;
