@@ -29,10 +29,10 @@ public class Differ {
     public static Map<String, Object> getMapFromFile(String filepath) throws IOException {
 
         Path path = Paths.get(filepath).toAbsolutePath().normalize();
-        String stringPath = Files.readString(path);
+        String file = Files.readString(path);
         String format = getFormat(filepath);
 
-        return Parser.parse(stringPath, format);
+        return Parser.parse(file, format);
 
     }
 
